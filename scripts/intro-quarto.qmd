@@ -1,0 +1,78 @@
+---
+title: "My first quarto document"
+format: html
+---
+
+## Quarto
+
+<https://quarto.org>
+
+This is a paragraph.
+
+This is another paragraph.
+
+**bold** and *italics*
+
+**also bold** and *also italics*
+
+- list (first item)
+- another item
+
+More text
+
+1.  Ordered list
+2.  item #2
+
+[linked text](https://quarto.org)
+
+## Second level heading
+
+
+### Third level heading
+
+```{r}
+# comment
+1+1
+
+```
+
+
+```{r, echo=FALSE}
+2*2
+
+```
+
+
+## Demonstration
+
+```{r}
+library(tidyverse)
+library(here)
+
+# Read in data with here (directly goes to folder then to file itself)
+interviews_plotting <- read_csv(here("data", "interviews-plotting.csv"))
+
+
+interviews_plotting
+
+```
+
+
+```{r}
+interviews_plotting |> 
+  ggplot(mapping = aes(y = fct_infreq(respondent_wall_type))) +
+  geom_bar(mapping = aes(fill = village)) +
+  labs(y = "Wall Type", x = NULL, title = "Bar Graph of Wall Type to Village",
+       fill = "Village") +
+  theme_linedraw()
+
+```
+
+
+
+
+
+
+
+
+
