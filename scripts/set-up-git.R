@@ -13,7 +13,10 @@ git_default_branch_configure()
 
 use_git()
 
+# how you can restore/revert a commit
+# git restore HEAD~1 scripts/tidy-data.R
 
+# I am making a change yeah
 
 
 
